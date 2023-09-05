@@ -1,21 +1,23 @@
-import React from 'react'
-import Home from './Home'
-import Form from './Form'
-
+import React from "react";
+import Home from "./Home";
+import Form from "./Form";
+import { Route, Routes, Link } from "react-router-dom";
 function App() {
   return (
     <div id="app">
       <nav>
-        {/* NavLinks go here */}
+        <Link to="/">Home</Link>
+        <Link to="pizza" id="pizza-form">
+          Create Your Pizza
+        </Link>
       </nav>
-      See the README for instructions :)
-      {/* Route and Routes go here */}
 
-      {/* Render these elements using Route */}
-      <Home />
-      <Form />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="pizza" element={<Form />} />
+      </Routes>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
